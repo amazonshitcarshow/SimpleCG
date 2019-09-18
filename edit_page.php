@@ -71,7 +71,7 @@ $hashstr = "";
 while(array_key_exists($count,$field_config)){
     if(isset($_POST[$count])){
         if(trim($_POST[$count]) != ""){
-            $buildstr = strtolower($buildstr . $field_config[$count]["name"] . " = \'".mysqli_real_escape_string($mylink, filter_var($_POST[$count],FILTER_SANITIZE_STRING))."\', ");
+            $buildstr = strtolower($buildstr . $field_config[$count]["name"] . " = \'".mysqli_real_escape_string($mylink, $_POST[$count])."\', ");
         }else{
             $buildstr = strtolower($buildstr . $field_config[$count]["name"] . " = \' \', ");
         }
